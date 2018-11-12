@@ -61,7 +61,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'mysite.urls'
+ROOT_URLCONF = 'waitingblock.urls'
 
 SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 
@@ -83,7 +83,7 @@ TEMPLATES = [
 
 DJANGO_TABLES2_TEMPLATE = 'django_tables2/bootstrap.html'
 
-WSGI_APPLICATION = 'mysite.wsgi.application'
+WSGI_APPLICATION = 'waitingblock.wsgi.application'
 
 
 # Database
