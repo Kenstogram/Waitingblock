@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'phonenumber_field',
     'waitingblock',
-    'blog',
     'django_tables2',
     'crispy_forms',
     'accounts',

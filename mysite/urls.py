@@ -11,7 +11,6 @@ urlpatterns = [
 # Use include() to add paths from the catalog application
 
 urlpatterns += [
-    path('blog/', include('blog.urls')),
     path('waitingblock/', include('waitingblock.urls')),
     path('waitingblock/', include('django.contrib.auth.urls')),
     path('accounts/', include('accounts.urls')),
