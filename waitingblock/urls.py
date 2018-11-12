@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
-from django.views.generic import RedirectView 
+from django.views.generic import RedirectView
 from django.conf.urls import url
 from django.urls import include, path
 from waitingblock.views import WaitingblockView, CustomerUpdateView, TablesView
@@ -15,4 +15,3 @@ urlpatterns = [
     path('tables/', include('django.contrib.auth.urls')),
     path('tables/', TablesView.as_view(), name='tables'),
 ]
-
