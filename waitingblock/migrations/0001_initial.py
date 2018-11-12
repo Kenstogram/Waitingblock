@@ -19,20 +19,38 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Customer',
             fields=[
-                ('name', models.CharField(max_length=30, primary_key=True, serialize=False)),
-                ('unique_id', models.UUIDField(default=uuid.uuid4, editable=False)),
+                ('name',
+                 models.CharField(
+                     max_length=30, primary_key=True, serialize=False)),
+                ('unique_id',
+                 models.UUIDField(default=uuid.uuid4, editable=False)),
                 ('partysize', models.IntegerField()),
                 ('arrival_time', models.DateTimeField(auto_now_add=True)),
-                ('contact', phonenumber_field.modelfields.PhoneNumberField(blank=True, max_length=128)),
-                ('status', models.BooleanField(choices=[(True, 'Waiting'), (False, 'Seated')])),
+                ('contact',
+                 phonenumber_field.modelfields.PhoneNumberField(
+                     blank=True, max_length=128)),
+                ('status',
+                 models.BooleanField(choices=[(True,
+                                               'Waiting'), (False,
+                                                            'Seated')])),
             ],
         ),
         migrations.CreateModel(
             name='Restaurant',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('contact', phonenumber_field.modelfields.PhoneNumberField(blank=True, max_length=128)),
-                ('restaurant_name', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                ('id',
+                 models.AutoField(
+                     auto_created=True,
+                     primary_key=True,
+                     serialize=False,
+                     verbose_name='ID')),
+                ('contact',
+                 phonenumber_field.modelfields.PhoneNumberField(
+                     blank=True, max_length=128)),
+                ('restaurant_name',
+                 models.ForeignKey(
+                     on_delete=django.db.models.deletion.CASCADE,
+                     to=settings.AUTH_USER_MODEL)),
             ],
         ),
     ]

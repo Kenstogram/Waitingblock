@@ -7,6 +7,7 @@ import django_tables2 as tables
 from django_tables2.utils import A
 from .models import Customer
 
+
 class CustomerTable(tables.Table):
     name = tables.Column()
     wait = tables.Column()
@@ -29,8 +30,9 @@ class CustomerUpdateTable(tables.Table):
     contact = tables.Column()
 
     class Meta:
-#        data = Customer.objects.get(pk=self.kwargs.get('pk'))
+        #        data = Customer.objects.get(pk=self.kwargs.get('pk'))
         data = Customer.objects.all()
+
 
 #class CustomerTable(tables.Table):
 #    name = tables.LinkColumn('customer-detail', args=[A,('pk')])

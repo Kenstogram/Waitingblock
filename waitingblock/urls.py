@@ -6,14 +6,12 @@ from django.urls import include, path
 from waitingblock.views import WaitingblockView, CustomerUpdateView, TablesView
 from . import views
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', WaitingblockView.as_view(), name='home'),
     path('waitingblock/', include('django.contrib.auth.urls')),
     path('success/', WaitingblockView.redirect_view),
     path('update/', CustomerUpdateView.as_view(), name='status_update'),
-    # not sure if defining a path twice works
     path('tables/', include('django.contrib.auth.urls')),
     path('tables/', TablesView.as_view(), name='tables'),
 ]
