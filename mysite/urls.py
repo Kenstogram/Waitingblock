@@ -13,9 +13,6 @@ urlpatterns = [
 urlpatterns += [
     path('waitingblock/', include('waitingblock.urls')),
     path('waitingblock/', include('django.contrib.auth.urls')),
-    path('accounts/', include('accounts.urls')),
-    path('accounts/', include('django.contrib.auth.urls')),
-    path('tables/', include('accounts.urls')),
     path('tables/', include('django.contrib.auth.urls')),
 ]
 #Add URL maps to redirect the base URL to our application
