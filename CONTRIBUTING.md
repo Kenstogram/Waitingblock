@@ -29,6 +29,12 @@ Install the required dependencies for developing this project:
 python -m pip install -r requirements-dev.txt
 ```
 
+Before you push, make sure your formatting matches pep8:
+
+```
+python -m yapf --in-place --recursive waitingblock
+```
+
 ### Testing
 Build the database by running all available migrations:
 
