@@ -3,7 +3,6 @@ from django.urls import include, path
 from waitingblock.views import WaitingblockView, CustomerUpdateView, TablesView
 from . import views
 
-
 #urlpatterns = [
 #    url(r'^$', WaitingblockView.as_view(), name='home', ),
 #    url(r'^update/', CustomerUpdateView.as_view(), name='status_update', ),
@@ -15,7 +14,7 @@ urlpatterns = [
     path('', WaitingblockView.as_view(), name='home'),
     path('success/', WaitingblockView.redirect_view),
     path('update/', CustomerUpdateView.as_view(), name='status_update'),
-#    path('update/<int:id>/', CustomerUpdateView.as_view(), name='status_update'),
-#    path('update/success/', WaitingblockView.redirect_view),
+    #    path('update/<int:id>/', CustomerUpdateView.as_view(), name='status_update'),
+    #    path('update/success/', WaitingblockView.redirect_view),
     path('tables/', TablesView.as_view(), name='tables'),
 ]

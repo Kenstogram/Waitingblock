@@ -9,7 +9,12 @@ from .models import Customer
 class CustomerForm(forms.ModelForm):
     class Meta:
         model = Customer
-        fields = ('name', 'partysize', 'contact', 'status', )
+        fields = (
+            'name',
+            'partysize',
+            'contact',
+            'status',
+        )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -17,8 +22,8 @@ class CustomerForm(forms.ModelForm):
         self.helper.form_method = 'POST'
         self.helper.add_input(Submit('submit', 'Submit'))
 
-class CustomerUpdateForm(forms.ModelForm):
 
+class CustomerUpdateForm(forms.ModelForm):
     class Meta:
         model = Customer
         fields = ('status', )
@@ -29,5 +34,7 @@ class CustomerUpdateForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+
+
 #        self.helper.form_method = 'post'
 #        self.helper.add_input(Submit('submit', 'Save person'))
