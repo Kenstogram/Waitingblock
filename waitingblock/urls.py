@@ -12,6 +12,8 @@ urlpatterns = [
     path('waitingblock/', include('django.contrib.auth.urls')),
     path('success/', WaitingblockView.redirect_view),
     path('update/', CustomerUpdateView.as_view(), name='status_update'),
-    path('tables/', include('django.contrib.auth.urls')),
     path('tables/', TablesView.as_view(), name='tables'),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/signup/', views.SignUp.as_view(), name='signup'),
+    path('accounts/password_reset', views.PasswordReset.as_view(), name='password_reset'),
 ]

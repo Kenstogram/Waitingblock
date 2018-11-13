@@ -5,6 +5,9 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.urls import reverse, reverse_lazy
 
+from django.contrib.auth.forms import UserCreationForm
+from django.views import generic
+
 from .models import Customer
 from .tables import CustomerTable, CustomerUpdateTable
 from .forms import CustomerForm, CustomerUpdateForm
@@ -32,9 +35,16 @@ class WaitingblockView(MultiTableMixin, FormView, TemplateView):
                 qs, exclude=('unique_id', 'arrival_time', 'contact'))
         ]
 
-    def form_valid(self, form):
-        form.save(self.request.user)
-        return super(WaitingblockView, self).form_valid(form)
+#    def form_valid(self, form):
+#        form.save()
+#        return super().form_valid(form)
+
+    def form_valid(request):
+        if request.method == 'POST':
+            form = CustomerForm(request.POST)
+            if form.is_valid():
+                form.save()
+                return redirect('/waitingblock/')
 
     def redirect_view(request):
         response = redirect('/waitingblock/')
@@ -141,3 +151,12 @@ class TablesView(MultiTableMixin, FormView, TemplateView):
 #          companyid=self.kwargs['pk']
 #          return reverse_lazy('company', kwargs={'pk': companyid})
 #
+class SignUp(generic.CreateView):
+    form_class = UserCreationForm
+    success_url = reverse_lazy('login')
+    template_name = 'accounts/signup.html'
+
+class PasswordReset(generic.CreateView):
+    form_class = UserCreationForm
+    success_url = reverse_lazy('password_reset')
+    template_name = 'accounts/password_reset.html'

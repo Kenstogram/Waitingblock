@@ -20,7 +20,7 @@ class CustomerForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_method = 'POST'
-        self.helper.add_input(Submit('submit', 'Submit'))
+        self.helper.add_input(Submit('submit', 'Add'))
 
 
 class CustomerUpdateForm(forms.ModelForm):
