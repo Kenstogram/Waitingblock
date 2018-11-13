@@ -9,17 +9,17 @@ from django.urls import reverse
 #from django.utils.timesince import timesince
 from django.utils.timezone import utc
 from phonenumber_field.modelfields import PhoneNumberField
-from django.contrib.auth.models import AbstractUser
+#from django.contrib.auth.models import AbstractUser
 
 #from django_tables2 import MultiTableMixin
 #from django.forms import ModelForm
 
-class User(AbstractUser):
-    pass
+#class User(AbstractUser):
+#    pass
 
 
 class Host(models.Model):
-    restaurant_name = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    service_name = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     contact = PhoneNumberField(blank=True)
 
 
