@@ -115,6 +115,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+#AUTH_USER_MODEL = 'waitingblock.Host'
+
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 

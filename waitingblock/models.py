@@ -9,13 +9,17 @@ from django.urls import reverse
 #from django.utils.timesince import timesince
 from django.utils.timezone import utc
 from phonenumber_field.modelfields import PhoneNumberField
+#from django.contrib.auth.models import AbstractUser
 
 #from django_tables2 import MultiTableMixin
 #from django.forms import ModelForm
 
+#class User(AbstractUser):
+#    pass
 
-class Restaurant(models.Model):
-    restaurant_name = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+
+class Host(models.Model):
+    service_name = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     contact = PhoneNumberField(blank=True)
 
 
@@ -23,7 +27,6 @@ BOOL_CHOICES = ((True, 'Waiting'), (False, 'Seated'))
 
 
 class Customer(models.Model):
-    #    name = models.CharField(max_length=30)
     name = models.CharField(primary_key=True, max_length=30)
     unique_id = models.UUIDField(default=uuid.uuid4, editable=False)
     partysize = models.IntegerField()
