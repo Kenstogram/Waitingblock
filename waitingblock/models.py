@@ -14,12 +14,10 @@ from phonenumber_field.modelfields import PhoneNumberField
 #from django_tables2 import MultiTableMixin
 #from django.forms import ModelForm
 
-#class User(AbstractUser):
-#    pass
 
 
-class Host(models.Model):
-    service_name = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+class Restaurant(models.Model):
+    Restaurant_name = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     contact = PhoneNumberField(blank=True)
 
 

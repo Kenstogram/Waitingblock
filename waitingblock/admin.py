@@ -2,4 +2,4 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from .models import Host, User
 
-admin.site.register(User, Host)
+admin.site.register(User, Restaurant)
