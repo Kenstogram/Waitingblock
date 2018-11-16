@@ -17,8 +17,9 @@ class CustomerForm(forms.ModelForm):
         )
 
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.helper = FormHelper()
+        super(CustomerForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper(self)
+#        self.helper.form_id = 'customerform-id'
         self.helper.form_method = 'POST'
         self.helper.add_input(Submit('submit', 'Add'))
 
