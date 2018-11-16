@@ -14,13 +14,17 @@ from phonenumber_field.modelfields import PhoneNumberField
 #from django_tables2 import MultiTableMixin
 #from django.forms import ModelForm
 
-#class User(AbstractUser):
-#    pass
 
-
-class Host(models.Model):
-    service_name = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+class Restaurant(models.Model):
+    Restaurant_name = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     contact = PhoneNumberField(blank=True)
+    slug = models.SlugField()
+    location = models.CharField(max_length=30)
+    city = models.CharField(max_length=30)
+#    features = models.ManyToManyField() # dinner, launch, nightlife,
+#    timing = models.ManyToManyField() # sunday, monday, tuesday,
+    delivery = models.BooleanField(default=False)
+#    image = models.ImageField()
 
 
 BOOL_CHOICES = ((True, 'Waiting'), (False, 'Seated'))
