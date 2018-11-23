@@ -9,6 +9,7 @@ from django.urls import reverse
 #from django.utils.timesince import timesince
 from django.utils.timezone import utc
 from phonenumber_field.modelfields import PhoneNumberField
+
 #from django.contrib.auth.models import AbstractUser
 
 #from django_tables2 import MultiTableMixin
@@ -21,11 +22,12 @@ class Restaurant(models.Model):
     slug = models.SlugField()
     location = models.CharField(max_length=30)
     city = models.CharField(max_length=30)
-#    features = models.ManyToManyField() # dinner, launch, nightlife,
-#    timing = models.ManyToManyField() # sunday, monday, tuesday,
+    #    features = models.ManyToManyField() # dinner, launch, nightlife,
+    #    timing = models.ManyToManyField() # sunday, monday, tuesday,
     delivery = models.BooleanField(default=False)
-#    image = models.ImageField()
 
+
+#    image = models.ImageField()
 
 BOOL_CHOICES = ((True, 'Waiting'), (False, 'Seated'))
 

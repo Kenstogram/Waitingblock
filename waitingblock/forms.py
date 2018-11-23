@@ -19,7 +19,7 @@ class CustomerForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(CustomerForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper(self)
-#        self.helper.form_id = 'customerform-id'
+#       self.helper.form_id = 'customerform-id'
         self.helper.form_method = 'POST'
         self.helper.add_input(Submit('submit', 'Add'))
 
@@ -34,8 +34,10 @@ class CustomerUpdateForm(forms.ModelForm):
 #    status = models.BooleanField()
 
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
+        super(CustomerUpdateForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper(self)
+        self.helper.form_method = 'POST'
+        self.helper.add_input(Submit('submit', 'Seat'))
 
 #        self.helper.form_method = 'post'
 #        self.helper.add_input(Submit('submit', 'Save person'))

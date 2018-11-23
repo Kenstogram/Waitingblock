@@ -41,22 +41,16 @@
       </div>
       {% csrf_token %}
       <p><button onclick="Contact" class="btn btn-success">Contact</button></p>
-      <p><button type="submit" name='seat' class="btn">Seat</button></p>
-
+      <p>
+        <form>
+          <button formaction="{% url 'tables' %}" class="btn">Seat</button>
+        </form>
+      </p>
       <p>
         <form>
           <button formaction="{% url 'tables' %}" class="btn">Cancel</button>
         </form>
       </p>
-      <!-- Canceljson           <p><button onclick="goBack()" class="btn">Cancel</button>
-                          <script>
-                          function  goBack()  {
-                              window.history.back();
-                          }
-                          </script>
-                          </p>
-                          </form>
--->
     </div>
   </div>
 </body>
@@ -71,8 +65,6 @@
       </div>
     </div>
     {% endif %}
-
   </div>
 </footer>
-
 </html>
