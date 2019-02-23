@@ -16,35 +16,37 @@
 <body>
   <div class="container">
   </div>
-    <div class="row justify-content-center">
-      <div class="col-8">
-        <h1>waitingblock</h1>
-        <hr class="mt-0 mb-4">
-        {% load crispy_forms_tags %}
-        <!-- Username Login/Logout -->
-        <div>
-          {% block content %}
-          {% if user.is_authenticated %}
-          <p><a href="{% url 'tables' %}">Tables</a></p>
-          <p><button type="submit" class="btn">{{ user.username }}</button></p>
-          <!-- Form -->
-          <form method="post" novalidate>
-            {% csrf_token %}
-            <div class="row">
-              <div class="col-8">
-                {% crispy form %}
-              </div>
-          </form>
-        </div>
-        {% else %}
-        <p><h7>Welcome Page</h7><p>
-        <p><a href="{% url 'login' %}">Login</a></p>
-        <p><a href="{% url 'signup' %}">Sign Up</a></p>
-
-        {% endif %}
-        {% endblock %}
+  <div class="row justify-content-center">
+    <div class="col-8">
+      <h1>waitingblock</h1>
+      <hr class="mt-0 mb-4">
+      {% load crispy_forms_tags %}
+      <!-- Username Login/Logout -->
+      <div>
+        {% block content %}
+        {% if user.is_authenticated %}
+        <p><a href="{% url 'tables' %}">Tables</a></p>
+        <p><button type="submit" class="btn">{{ user.username }}</button></p>
+        <!-- Form -->
+        <form method="post" novalidate>
+          {% csrf_token %}
+          <div class="row">
+            <div class="col-8">
+              {% crispy form %}
+            </div>
+        </form>
       </div>
+      {% else %}
+      <p>
+        <h7>Welcome Page</h7>
+        <p>
+          <p><a href="{% url 'login' %}">Login</a></p>
+          <p><a href="{% url 'signup' %}">Sign Up</a></p>
+
+          {% endif %}
+          {% endblock %}
     </div>
+  </div>
   </div>
 
 </body>
