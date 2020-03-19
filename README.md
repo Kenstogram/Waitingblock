@@ -1,1 +1,1 @@
-# Waitingblock has moved to [here] (https://github.com/Waitingblock/Waitingblock)
+# [Waitingblock has moved here](https://github.com/Waitingblock/Waitingblock)
